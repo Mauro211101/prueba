@@ -1,10 +1,13 @@
 {% extends "miBlog/base.html "%}
 
 {% block main %}
-<h1>{{object.circuit_name}}</h1>
-<p> 
+<p>
+    <h1>{{object.nombre_circuito}}</h1>
     <br>
-    {{object.circuit_description}}
+    <img src="{{ object.circuit_image.url }}" width="480px" height="70%">
+    </br>
+    <br>
+    {{object.descripcion_circuito}}
     </br>
     <a href="{% url 'post-list' %}">Volver</a>
 </p>

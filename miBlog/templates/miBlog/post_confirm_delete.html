@@ -1,7 +1,7 @@
 {% extends "miBlog/base.html" %}
 
 {% block main %}
-<h1>Estas seguro que queres borrar el circuito {{object.circuit_name}}?</h1>
+<h1>Estas seguro que queres borrar el circuito {{object.nombre_circuito}}?</h1>
 <form method="POST">
     {% csrf_token %}
     {{form}}
