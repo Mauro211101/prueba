@@ -16,11 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from miBlog.views import *
+from Account.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",index),
+    path("",index,name="index"),
     path("post/create",AddPost.as_view(),name="add-post"),
     path("post/list",PostList.as_view(),name="post-list"),
-    path("post/<pk>/detail",PostDetail.as_view(),name="post-detail")
+    path("post/<pk>/detail",PostDetail.as_view(),name="post-detail"),
+    path("post/<pk>/update",UpdatePost.as_view(),name="update-post"),
+    path("post/<pk>/delete",DeletePost.as_view(),name="delete-post"),
+    path("signup/",SignUp.as_view(),name="signup"),
+    path("login/",Login.as_view(),name="login"),
+    path("logout/",Logout.as_view(),name="logout"),
 ]
